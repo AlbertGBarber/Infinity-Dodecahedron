@@ -273,3 +273,14 @@ Segment *horiz_arr[] = { &horizSegment0, &horizSegment1 };
 SegmentSet horizSegments = { SIZE(horiz_arr), horiz_arr };
 
 //================================================
+
+//resets all the segments to their default directions (as set in segmentDefs)
+void resetSegDirections() {
+  ringSegments.setsegDirectionEvery(1, true, true);
+  
+  vertLineSegments.setsegDirectionEvery(1, true, true);
+  
+  hexSegments.setsegDirectionEvery(1, true, true);
+  
+  horizSegments.setsegDirectionEvery(1, true, true);
+}
