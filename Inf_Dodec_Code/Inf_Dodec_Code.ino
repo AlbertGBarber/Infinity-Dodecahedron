@@ -31,7 +31,7 @@
 #define EEPROM_ENABLE   false
 
 //total number of effects (change this if you add any!)
-#define NUM_EFFECTS     28
+#define NUM_EFFECTS     18
 
 //pin connections
 #define PIXEL_PIN       D8
