@@ -1,5 +1,5 @@
 //This code is placed under the MIT license
-//Copyright (c) 2020 Albert Barber
+//Copyright (c) 2021 Albert Barber
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy
 //of this software and associated documentation files (the "Software"), to deal
@@ -111,12 +111,6 @@ uint32_t firePallet[3] = { red, ltOrange, white };
 uint32_t tempRandPallet2[3];
 uint32_t tempRandPallet[5]; //pallet for random colors (length sets number of colors used by randomColors effect)
 byte simpleRepeatPatternRand[10] = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4};
-
-byte wavepattern[]  = { 6, 1 };
-byte wavepattern2[] = { 5, 4 };
-byte wavepattern3[] = { 6, 7 };
-byte wavepattern4[] = { 8, 7 };
-byte christmasWavePattern[5] = { 0, 1, 2, 3, 4};
 
 //for simple repeart drawing functions
 byte simpleRepeatPattern[5] = {8, 6, 7, 4, 5}; //{ 4, 0, 5, 0, 6, 0, 7, 0};
@@ -346,6 +340,7 @@ void loop() {
   }
 
   //unused effects
+  
   //  for (int i = 0; i < 4; i++) {
   //    strip.gradientCycleRand( 4, 14, 24 * 7, direct, 90);
   //    direct = !direct;
@@ -376,7 +371,7 @@ void loop() {
 
   //strip.randomColors(-1, false, white.color32, 70, 5, 15000);
 
-  // strip.doRepeatSimplePattern(simpleRepeatPattern, SIZE(simpleRepeatPattern), pallet, SIZE(pallet), 20, 25, 20, false);
+  //strip.doRepeatSimplePattern(simpleRepeatPattern, SIZE(simpleRepeatPattern), pallet, SIZE(pallet), 20, 25, 20, false);
 
 }
 
