@@ -119,14 +119,14 @@ byte simpleRepeatPattern[5] = {8, 6, 7, 4, 5}; //{ 4, 0, 5, 0, 6, 0, 7, 0};
 //EEPRROM has limited writes, so we want to commit all the writes after a delay
 //this allows the data to change while the user is pressing buttons, and we'll only commit
 //the final values once they are done
-void ICACHE_RAM_ATTR commitEEPROM() {
+void IRAM_ATTR commitEEPROM() {
   EEPROM.commit();
 }
 
 //triggered by button 1, stops the current pattern, and switches to the next one, wrapping if needed
 //also stores effect index in eeprom
 //if button 2 is also being held, turn effects on / off
-void ICACHE_RAM_ATTR nextEffect() {
+void IRAM_ATTR nextEffect() {
   strip.pixelStripStopPattern = true; //stop the current pattern
   breakCurrentEffect = true; //set flag to break out of current case statement
   //if we are rotating to the next effect, reset all the segment directions
@@ -149,7 +149,7 @@ void ICACHE_RAM_ATTR nextEffect() {
 //also stores the state in eeprom
 //(if rotation is off, the current effect will be repeated continuously)
 //if button 1 is also being held, turn effects on / off
-void ICACHE_RAM_ATTR effectRotaToggle() {
+void IRAM_ATTR effectRotaToggle() {
   if ( digitalRead(BUTTON_1) == LOW) {
     strip.pixelStripStopPattern = true;
     effectsStop = !effectsStop;
@@ -165,7 +165,7 @@ void ICACHE_RAM_ATTR effectRotaToggle() {
 //triggered by button 3, sets the strip brightness to the next
 //also stores the brighness index in eeprom
 //brightness level in the brightnessLevels array (wrapping to the start if needed)
-void ICACHE_RAM_ATTR brightnessAdjust() {
+void IRAM_ATTR brightnessAdjust() {
   brightnessIndex = (brightnessIndex + 1) % numBrightnessLevels;
   strip.setBrightness( brightnessLevels[ brightnessIndex ] );
   EEPROM.write(BRIGHTNESS_ADDR, brightnessIndex);
